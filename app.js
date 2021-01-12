@@ -1,9 +1,17 @@
 const express = require("express");
 const dotenv = require("dotenv").config({path: './config.env'});
-
+const bodyParser = require("body-parser");
 
 const app = express();
 
+app.use(bodyParser.json());
+
+
+// @desc load main page
+// @route GET /
+app.get('/', (req,res) => {
+    res.send('App Works !!!!');
+});
 
 
 // listen for requests
