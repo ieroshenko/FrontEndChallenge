@@ -1,0 +1,32 @@
+@use '../client/src/app/utilities/appvariables.sass'
+
+
+.album-text
+  display: flex
+  flex-wrap: wrap
+
+
+.album-name
+  font-size: 15px
+  font-weight: 550
+  font-family: appvariables.$font-stack
+  color: appvariables.$primary-font-color
+
+
+.album-author
+  color: appvariables.$secondary-font-color
+  font-family: appvariables.$font-stack
+  font-size: 14px
+
+.album-author, .album-name
+  line-height: 1.5em
+  max-height: 3em
+  overflow: hidden
+  -webkit-line-clamp: 2
+  display: -webkit-box
+  -webkit-box-orient: vertical
+  overflow: hidden
+  white-space: normal
+  width: 100%
+  padding: 0
+  margin: 0

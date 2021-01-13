@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { AlbumsComponent } from './components/albums/albums.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AlbumItemComponent } from './components/album-item/album-item.component';
+import { HeaderComponent } from './components/layout/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlbumsComponent,
-    AlbumItemComponent
+    AlbumItemComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

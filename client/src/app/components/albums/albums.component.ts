@@ -8,13 +8,7 @@ import {AlbumService} from "../../services/album.service";
   styleUrls: ['./albums.component.sass']
 })
 export class AlbumsComponent implements OnInit {
-  albums: Album[] = [
-    {
-      'im:name': "Best",
-      'im:image': [],
-      'im:artist': 'Ivan'
-    },
-  ];
+  albums: Album[] = [];
 
   constructor(private albumService:AlbumService) { }
 
@@ -22,7 +16,7 @@ export class AlbumsComponent implements OnInit {
     this.albumService.getTopOneHundredAlbums().subscribe(topAlbumsResponse => {
       console.log(topAlbumsResponse.feed);
 
-      this.albums = topAlbumsResponse.feed.entry
+      this.albums = topAlbumsResponse.feed.entry.map((entry:any) => new Album(entry))
     })
   }
 

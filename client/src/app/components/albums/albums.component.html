@@ -1,4 +1,7 @@
-<app-album-item
+<div class="albums-holder">
+  <p class="title">Top 100 Albums</p>
+  <app-album-item class="album-item"
   *ngFor="let album of albums"
   [album]="album"
-></app-album-item>
+  ></app-album-item>
+</div>

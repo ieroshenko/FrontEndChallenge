@@ -7,7 +7,7 @@ import {Album} from "../../models/Album";
   styleUrls: ['./album-item.component.sass']
 })
 export class AlbumItemComponent implements OnInit {
-  @Input() album: Album | undefined;
+  @Input() album!: Album;
 
   constructor() { }
 
