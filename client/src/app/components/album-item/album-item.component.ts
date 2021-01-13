@@ -8,10 +8,22 @@ import {Album} from "../../models/Album";
 })
 export class AlbumItemComponent implements OnInit {
   @Input() album!: Album;
+  favIconImage: string | undefined;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.updateImageIcon();
   }
 
+  updateFavoriteItemSelection(): void {
+    this.album.isFavorite = !this.album.isFavorite;
+    this.updateImageIcon();
+
+    // add to fav/delete on backend
+  }
+
+  updateImageIcon(): void {
+    this.favIconImage = this.album.isFavorite ? "/assets/heart_red.png" : "/assets/heart_white.png";
+  }
 }

@@ -1,5 +1,8 @@
-<div class="album-card">
-  <img src={{album.image}} width="100%" height="100%">
+<div class="album-card" >
+  <div class="image-container">
+    <img src={{album.image}} width="100%" height="100%" class="album-image">
+    <img src="{{favIconImage}}" width="10%" height="10%" class="add-delete-fav" (click)="updateFavoriteItemSelection()">
+  </div>
   <div class="album-text">
     <p class="album-name">
       {{ album.name }}

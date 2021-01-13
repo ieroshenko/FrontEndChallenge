@@ -2,6 +2,7 @@ export class Album {
   name?: String;
   image?: String;
   artist?: String;
+  isFavorite:boolean = false;
 
   constructor(entry: any) {
     this.name = entry['im:name'].label;
@@ -11,7 +12,6 @@ export class Album {
 
   private obtainImageUrl(images: any[]):string {
     let imgUrl = images[0].label.slice(0, -11) + '600x600bb.png'
-    console.log(imgUrl)
     return imgUrl;
   }
 }
