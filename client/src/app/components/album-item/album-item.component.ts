@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Album} from "../../models/Album";
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-album-item',
@@ -10,7 +11,7 @@ export class AlbumItemComponent implements OnInit {
   @Input() album!: Album;
   favIconImage: string | undefined;
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.updateImageIcon();
@@ -25,5 +26,10 @@ export class AlbumItemComponent implements OnInit {
 
   updateImageIcon(): void {
     this.favIconImage = this.album.isFavorite ? "/assets/heart_red.png" : "/assets/heart_white.png";
+  }
+
+
+  onAlbumClicked(content: any) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', centered: true, size: 'xl'});
   }
 }

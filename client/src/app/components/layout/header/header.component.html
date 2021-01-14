@@ -1,4 +1,3 @@
 <header class="header">
-  <p>Search Bar</p>
-  <p>Favorite albums</p>
+  <input id="search-bar" class="form-control" placeholder="Search for Albums" type="text" ngModel (ngModelChange)="onSearchBarTextChanged($event)" >
 </header>

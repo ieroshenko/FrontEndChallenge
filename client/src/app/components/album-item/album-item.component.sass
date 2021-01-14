@@ -1,9 +1,12 @@
 @use '../client/src/app/utilities/appvariables.sass'
 
+.album-image
+  border-radius: 5px
 
 .album-text
   display: flex
   flex-wrap: wrap
+  margin-top: 7px
 
 
 .album-name
@@ -38,9 +41,11 @@
   bottom: 5%
   background-color: #c9c9c9
   border-radius: 100px
-  padding: 10px
+  padding: 2.5%
   opacity: 0
   transition: .3s ease
+  min-width: 10px
+  min-height: 10px
 
 
 .image-container
@@ -54,3 +59,69 @@
 .album-card
   width: 100%
   height: 100%
+  cursor: pointer
+
+
+/*When the modal fills the screen it has an even 2.5% on top and bottom*/
+/*Centers the modal*/
+.modal-dialog
+  margin: 2.5vh auto
+  background-color: appvariables.$main-background-color
+  border-width: 0px
+
+
+/*Sets the maximum height of the entire modal to 95% of the screen height*/
+.modal-content
+  height: 70%
+  overflow: hidden
+
+
+/*Sets the maximum height of the modal body to 90% of the screen height*/
+.modal-body
+  height: 100%
+  background-color: appvariables.$main-background-color
+  border-width: 0px
+  display: flex
+  color: appvariables.$primary-font-color
+
+/*Sets the maximum height of the modal image to 69% of the screen height*/
+.modal-body img
+  height: 35%
+  width: 35%
+  border-radius: 5px
+  border-width: 0px
+
+.modal-header
+  border-radius: 0px
+  background-color: appvariables.$main-background-color
+  border-color: appvariables.$dark-background-color
+  color: appvariables.$primary-font-color
+  padding: 3%
+
+
+.modal-footer
+  border-radius: 0px
+  background-color: appvariables.$main-background-color
+  border-color: appvariables.$dark-background-color
+
+.modal-header button
+  outline: none
+
+.album-text-description
+  margin-left: 5%
+
+.album-description-author
+  color: appvariables.$red-color
+  font-family: appvariables.$font-stack
+  font-size: 19px
+
+.album-description-release-date
+  font-family: appvariables.$font-stack
+  font-size: 15px
+  color: appvariables.$secondary-font-color
+
+
+
+
+
+

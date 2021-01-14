@@ -1,7 +1,8 @@
+<app-header (searchAlbum)="searchForAlbums($event)"></app-header>
 <div class="albums-holder">
   <p class="title">Top 100 Albums</p>
   <app-album-item class="album-item"
-  *ngFor="let album of albums"
+  *ngFor="let album of albumsToBeDisplayed"
   [album]="album"
   ></app-album-item>
 </div>
