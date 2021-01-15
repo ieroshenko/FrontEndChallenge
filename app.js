@@ -3,6 +3,7 @@ const dotenv = require("dotenv").config({path: './config.env'});
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const requestIp = require('request-ip');
+const path = require('path');
 
 
 const app = express();
@@ -13,7 +14,7 @@ app.use(requestIp.mw());
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(express.static(process.cwd() + '/client/dist/client/index.html'));
+app.use(express.static(path.join(__dirname, '/client/dist/client/index.html')));
 
 // connecting to db
 const connectDB = async(MONGO_URI) => {
@@ -41,11 +42,11 @@ app.use('/api/albums', require('./routes/albums'));
 
 
 app.get('/', (req,res) => {
-    res.sendFile(process.cwd() + '/client/dist/client/index.html');
+    res.sendFile(path.join(__dirname, '/client/dist/client/index.html'));
 });
 
 app.get('*', (req,res) => {
-    res.sendFile(process.cwd() + `/client/dist/client/${req.url}`);
+    res.sendFile(path.join(__dirname, `/client/dist/client/${req.url}`));
 });
 
 
