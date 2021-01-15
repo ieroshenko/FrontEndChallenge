@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AlbumItemComponent} from './components/album-item/album-item.component';
 import {HeaderComponent} from './components/layout/header/header.component';
 import {IsLoadingModule} from "@service-work/is-loading";
+import {JpImagePreloadModule} from "@jaspero/ng-image-preload";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {IsLoadingModule} from "@service-work/is-loading";
     FormsModule,
     IsLoadingModule,
     MatProgressBarModule,
+    JpImagePreloadModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
