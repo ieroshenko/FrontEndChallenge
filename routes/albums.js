@@ -9,17 +9,12 @@ const AlbumLike = require("../models/AlbumLike");
 // @route GET /api/albums
 router.get("/", async (req, res) => {
     try {
-        console.log("*()*");
         let clientIp = req.clientIp;
-        console.log("client ip: " + clientIp);
         await axios.get("https://itunes.apple.com/us/rss/topalbums/limit=100/json").then(async (response) => {
-            console.log("here after get method");
             let topAlbums = response.data.feed.entry;
 
             for (let i = 0; i < topAlbums.length; i++) {
                 let album = topAlbums[i];
-
-                console.log("i: " + i);
 
                 // check if album was liked by the user
                 let isLikedByUser = await AlbumLike.findOne({
@@ -29,8 +24,6 @@ router.get("/", async (req, res) => {
 
                 album.isLikedByUser = isLikedByUser;
             }
-
-            console.log("here");
             res.status(200).send(topAlbums);
         });
     } catch (e) {
