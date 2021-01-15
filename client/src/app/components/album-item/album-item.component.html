@@ -14,7 +14,8 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-light" (click)="modal.close('Save click')">Like</button>
+    <img src="{{likeIconImage}}" width="5.5%" height="5.5%" class="description-like-button" (click)="updateLikeAlbumStatus()">
+    <p class="album-description-likes">{{numberOfLikes}}</p>
   </div>
 </ng-template>
 
@@ -22,7 +23,7 @@
 <div class="album-card" >
   <div class="image-container">
     <img src={{album.image}} width="100%" height="100%" class="album-image" (click)="onAlbumClicked(content)">
-    <img src="{{favIconImage}}" width="16%" height="16%" class="add-delete-fav" (click)="updateFavoriteItemSelection()">
+    <img src="{{likeIconImage}}" width="16%" height="16%" class="like-button" (click)="updateLikeAlbumStatus()">
   </div>
   <div class="album-text" (click)="onAlbumClicked(content)">
     <p class="album-name">

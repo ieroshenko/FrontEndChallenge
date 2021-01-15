@@ -11,6 +11,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -67,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610334182948</updated>
-      <workItem from="1610334185053" duration="49677000" />
+      <workItem from="1610334185053" duration="67194000" />
     </task>
     <servers />
   </component>
@@ -75,6 +76,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610654727973">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.900@0.0.1440.900" timestamp="1610654727973" />
     <state x="372" y="235" key="EditFileWatcherDialog" timestamp="1610427017291">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

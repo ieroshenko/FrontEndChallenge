@@ -1,8 +1,14 @@
 @use "src/app/utilities/appvariables.sass"
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css'
 
 
 .content-container
   width: 100%
   margin: 0
   padding: 0
+
+.content-container mat-progress-bar
+  position: absolute
+  top: 0
+  z-index: 5000
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Album} from "../../models/Album";
 import {AlbumService} from "../../services/album.service";
+import {IsLoadingService} from "@service-work/is-loading";
 
 @Component({
   selector: 'app-albums',
@@ -11,12 +12,15 @@ export class AlbumsComponent implements OnInit {
   albums: Album[] = [];
   albumsToBeDisplayed: Album[] = [];
 
-  constructor(private albumService:AlbumService) { }
+  constructor(private albumService:AlbumService, private isLoadingService: IsLoadingService) { }
 
   ngOnInit(): void {
+    this.isLoadingService.add();
     this.albumService.getTopOneHundredAlbums().subscribe(topAlbumsResponse => {
-        this.albums = topAlbumsResponse.feed.entry.map((entry: any) => new Album(entry));
+        this.albums = topAlbumsResponse.map((entry: any) => new Album(entry));
         this.albumsToBeDisplayed = [...this.albums];
+
+        this.isLoadingService.remove();
     });
   }
 
