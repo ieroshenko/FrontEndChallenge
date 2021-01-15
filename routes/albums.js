@@ -1,5 +1,5 @@
 const express = require("express");
-const request = require('request');
+const axios = require("axios");
 const router = express.Router();
 
 const AlbumLike = require("../models/AlbumLike");
@@ -9,15 +9,12 @@ const AlbumLike = require("../models/AlbumLike");
 // @route GET /api/albums
 router.get("/", async (req, res) => {
     try {
+        console.log("*()*");
         let clientIp = req.clientIp;
-        await request("https://itunes.apple.com/us/rss/topalbums/limit=100/json", {json: true}, async (err, apiResponse, body) => {
-            if (err) {
-                console.log(err);
-                res.send(err);
-            }
-
-            console.log("here: 19");
-            let topAlbums = apiResponse.body.feed.entry;
+        console.log("client ip: " + clientIp);
+        await axios.get("https://itunes.apple.com/us/rss/topalbums/limit=100/json").then(async (response) => {
+            console.log("here after get method");
+            let topAlbums = response.data.feed.entry;
 
             for (let i = 0; i < topAlbums.length; i++) {
                 let album = topAlbums[i];
