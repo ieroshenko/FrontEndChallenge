@@ -20,6 +20,7 @@ export class AlbumItemComponent implements OnInit {
     this.updateImageIcon();
   }
 
+  // like/unlike the album
   updateLikeAlbumStatus(): void {
     this.album.isLikedByUser = !this.album.isLikedByUser;
     this.updateImageIcon();
@@ -34,10 +35,12 @@ export class AlbumItemComponent implements OnInit {
     }
   }
 
+  // sets the correct image icon for the like 'button'
   updateImageIcon(): void {
     this.likeIconImage = this.album.isLikedByUser ? "/assets/heart_red.png" : "/assets/heart_white.png";
   }
 
+  // opens the modal window with description of the album
   onAlbumClicked(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', centered: true, size: 'xl'});
     this.albumService.getNumberOfLikesForAlbum(this.album.name).subscribe((response) => this.numberOfLikes = response.numLikes);

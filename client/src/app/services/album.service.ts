@@ -18,19 +18,22 @@ export class AlbumService {
 
   constructor(private http:HttpClient) { }
 
-  // get top 100 albums
+  // gets top 100 albums
   getTopOneHundredAlbums(): Observable<[]> {
     return this.http.get<[]>(this.topAlbumsUrl);
   }
 
+  // function which allows to like an album on the back-end
   likeAlbum(label: string) {
     return this.http.post<any>(this.topAlbumsUrl + '/like', {albumName: label}, httpOptions);
   }
 
+  // function unlikes previously like album on the back-end
   unlikeAlbum(label: string) {
     return this.http.delete<any>(this.topAlbumsUrl + '/like' + "/" + label, httpOptions);
   }
 
+  // function gets number of likes for the album from back-end
   getNumberOfLikesForAlbum(label: string) {
     return this.http.get<any>(this.topAlbumsUrl + '/likes' + "/" + label, httpOptions);
   }

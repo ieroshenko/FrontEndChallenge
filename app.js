@@ -40,9 +40,10 @@ connectDB(MONGO_URI);
 // @desc load main page
 // @route GET /
 app.get('/', (req,res) => {
-    res.send('App Works !!!!');
+    res.send('Hello World!');
 });
 
+// routes
 app.use('/api/albums', require('./routes/albums'));
 
 // listen for requests

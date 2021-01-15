@@ -15,6 +15,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // emits event to Albums component to update displayed albums
+  // triggered when user updates the input field
   onSearchBarTextChanged(value: any) {
     this.searchAlbum.emit(value);
   }

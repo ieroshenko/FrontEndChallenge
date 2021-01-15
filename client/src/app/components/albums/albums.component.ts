@@ -24,6 +24,7 @@ export class AlbumsComponent implements OnInit {
     });
   }
 
+  // updates currently displayed albums based on search input
   searchForAlbums(searchInput: string):void {
     this.albumsToBeDisplayed = this.albums.filter((album: Album) => {
       return album.name.substring(0, searchInput.length).toLowerCase() == searchInput.toLowerCase();

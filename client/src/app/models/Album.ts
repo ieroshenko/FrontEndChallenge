@@ -3,7 +3,6 @@ export class Album {
   image: string = "";
   artist: string = "";
   isLikedByUser: boolean = false;
-  numberOfLikes: number = 0;
   releaseDate: string = ""
   description: string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt mauris nec enim rhoncus fringilla sit amet ac nisl. Mauris dapibus augue non elit vehicula, id viverra lorem elementum. Nam tempor augue nec dolor cursus, laoreet rhoncus risus molestie. Integer eleifend lorem ac lectus accumsan euismod."
 
@@ -15,6 +14,7 @@ export class Album {
     this.isLikedByUser = entry.isLikedByUser;
   }
 
+  // obtains the img url in correct size
   private obtainImageUrl(images: any[]): string {
     let imgUrl = images[0].label.slice(0, -11) + '600x600bb.png'
     return imgUrl;

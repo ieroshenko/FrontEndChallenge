@@ -39,7 +39,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-// @desc add new like to album if the user didn't like previously
+// @desc add new like to album if the user didn't like this album previously
 // @route POST /api/albums/like
 router.post("/like", async (req, res) => {
     try {
