@@ -3,6 +3,8 @@ import {Observable} from "rxjs";
 import { IsLoadingService } from "@service-work/is-loading";
 
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,8 +18,8 @@ export class AppComponent {
   constructor(private isLoadingService: IsLoadingService) {
     this.isLoading = this.isLoadingService.isLoading$();
     this.preload(
-      "/assets/heart_red.png",
-      "/assets/heart_white.png");
+      "../assets/heart_red.png",
+      "../assets/heart_white.png");
   }
 
   preload(...args: any[]):void {
